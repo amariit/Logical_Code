@@ -1,0 +1,45 @@
+Given an alphabet, print all the alphabets up to and including the given alphabet.
+
+Write a function solution that accepts a character C, and prints alphabets up to the given character. 
+
+Input
+    d 
+
+Output
+    a b c d 
+
+    Where, 
+
+    There must be a single space between consecutive alphabets.
+    There should be no spaces after the last alphabet.
+
+Note :     C is a character within the range [{'a'...'z'}, {'A'...'Z'} ]. 
+           Alphabet(s) in input & output are case-sensitive.
+
+_______________________**************************************___________________________________
+
+code : 
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void solution(char C)
+{
+    if(C>='a' && C<='z'){
+        for(int i=97;i<=C;i++){
+            printf("%c ",i);
+        }
+    }
+    else if(C>='A' && C<='Z'){
+        for(int i=65;i<=C;i++){
+            printf("%c ",i);
+        }
+    }
+}
+
+int main()
+{
+    char C;
+    scanf("%c",&C);
+    solution(C);
+}
