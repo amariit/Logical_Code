@@ -1,0 +1,48 @@
+Given an integer, find whether the numbers is a Prime number or not. 
+
+Write a function solution that accepts an integer N. The function should return 1 if N is prime else 0. 
+
+Input
+    11 
+
+Output
+    1 
+
+Note : 11 can be divided exactly by 1 and 11. Hence it's a prime number.
+
+
+__________________________**************************************_________________________________
+
+code : 
+
+#include <stdio.h>
+
+int solution(int N)
+{
+    if(N<=1){
+      return 0;
+    }
+    int i,f=0;
+    for(i=2;i<N/2;i++){
+        if(N%i==0){
+            f=1;
+            break;
+        }
+    }
+    if(f==0){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+    
+    
+}
+
+int main(void) 
+{    
+    int N;
+    scanf("%d",&N);
+    printf("%d",solution(N));
+    return 0;
+}
