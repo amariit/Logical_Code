@@ -1,0 +1,48 @@
+Given an integer N, find whether the numbers is a magic number or not. 
+
+Write a function solution that accepts an integer N. The function should return 1 if N is magic number else 0. 
+
+Input 
+    199 
+
+Output 
+    1 
+Note : 
+        For 199, Sum of digits = 1 + 9 + 9 = 19, 
+        Sum of digits of 19 = 1 + 9 = 10 
+        Sum of digits of 10 = 1 + 0 = 1
+
+_______________________******************************______________________________________
+
+Code : 
+
+#include<stdio.h>
+
+int solution(int N)
+{
+    int sum=0,r;
+    while(N){
+        r=N%10;
+        sum=sum+r;
+        N=N/10;
+    }
+    if(sum>=10){
+        return solution(sum);
+    }
+    else{
+        if(sum==1){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+}
+
+int main(void) 
+{    
+    int N;
+    scanf("%d",&N);
+    printf("%d",solution(N));
+    return 0;
+}
