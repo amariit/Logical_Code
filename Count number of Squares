@@ -1,0 +1,50 @@
+Given two integers A & B, count the number of square numbers between them (both inclusive). 
+
+write a function: public int solution(int A, int B)
+that accept two integers A and B. The function should return a count of square numbers between A and B. 
+
+Input 
+    4 
+    17 
+
+where, 
+
+    First line of represents integer A. 
+    Second line represents integer B. 
+
+Output 
+    3 
+
+Note : Between 4 and 17 there 3 squares numbers (4, 9 and 16). 
+Assume that 
+
+    A and B are integers within the range [1 to 2,000,000,000] 
+
+
+_______________________________***********************************______________________________________
+
+Code : 
+
+
+import java.util.*;
+
+public class DriverMain {
+    public static void main(String[] args) {
+        ProblemSolution problemSolution = new ProblemSolution();
+        Scanner scanner = new Scanner(System.in);
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+        System.out.print(problemSolution.solution(A,B));
+    }
+}
+
+public class ProblemSolution {
+    public int solution(int A, int B){
+         
+        //write your code here
+        double x = Math.floor(Math.sqrt(B));
+        double y = Math.ceil(Math.sqrt(A));
+        double z = (1+x-y);
+        return (int)z;
+    }
+}
