@@ -1,0 +1,36 @@
+//find the Contigous subsequence sum of an array of any order of array
+//Example :- arr[5] = {1,2,3,4,2} ,tagret = 6 , total count is :3 , {1,2,3},{4,2}
+
+#include<stdio.h>
+int main(){
+	int sum=0,count=0,i,j,target,size;
+	printf("enter the size of an array : ");
+	scanf("%d",&size);
+	int arr[size];
+	printf("Enter the array element : ");
+	for(i=0;i<size;i++){
+		scanf("%d",&arr[i]);
+	}
+	printf("Enter the search element : ");
+	scanf("%d",&target); // target we need to find 
+	for(i=0;i<size-1;i++){
+		sum = sum+arr[i];
+		if(sum==target){
+			count++;
+		}
+		else{
+			for(j=i+1;j<size;j++){
+				sum = sum +arr[j];
+				if(sum>target){
+					break;
+				}
+				else if(sum==target){
+					count++;
+					break;
+				}
+			}
+		}
+		sum=0;
+	}
+	printf("Toal Contigous subsequence sum is = %d",count);
+}
